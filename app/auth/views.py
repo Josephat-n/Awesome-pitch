@@ -3,11 +3,9 @@ from . import auth
 from flask_login import login_user
 from ..models import User
 from .forms import LoginForm,RegistrationForm
+from .. import db
+from flask_login import login_user,logout_user,login_required
 
-@auth.route('/login')
-def login():
-   return render_template('auth/login.html')
- 
 @auth.route('/register',methods = ["GET","POST"])
 def register():
    form = RegistrationForm()
