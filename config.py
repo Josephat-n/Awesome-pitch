@@ -1,12 +1,13 @@
 import os
 
 class Config:
-  pass
+   pass  
 
 class ProdConfig(Config):
    pass
 
 class DevConfig(Config):
+   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://njoro:njoro@localhost/awesome'
    DEBUG = True
 
 config_options = {
