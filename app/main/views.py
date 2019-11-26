@@ -11,3 +11,11 @@ def index():
    #function for fetching the pitches from the db.
    
    return render_template('index.html')
+
+@main.route('/pitch/')
+def pitch():
+   """
+   Allow for more viewing of a given pitch.
+   """
+   #Should return a pitch by id
+   render_template('pitch.html')
