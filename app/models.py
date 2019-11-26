@@ -16,6 +16,7 @@ class User(UserMixin,db.Model):
    role_id = db.Column(db.Integer,db.ForeignKey('roles.id'))
    pass_secure = db.Column(db.String(255))
    password_hash = db.Column(db.String(255))
+   pitches = db.relationship('Pitch',backref = 'id',lazy="dynamic")
    
    @property
    def password(self):
@@ -43,3 +44,13 @@ class Role(db.Model):
    def __repr__(self):
       return f'User {self.name}'     
      
+class Pitch(db.Model):
+   __tablename____ = 'pitches'
+   
+   id = db.Column(db.Integer,primary_key = True)    
+   pitch_msg =  db.Column(db.String(255))
+   user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+   
+   
+   def __repr__(self):
+      return f'Pitch {self.pitch_msg}'
