@@ -2,17 +2,20 @@
 
 {% block content %}
 <div class="container">
+  {% for x in a_pitch %}
 
   <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">{{x.pitch_msg}}
     </div>
     <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-      <h3>This Pitch</h3>
+      <h3>About this Pitch</h3>
       <p class="overview">Pitch Category:</p>
       <p class="overview">Author:</p>
       
       <a class="ratings" href="/pitch/comment/"> Write a comment</a>
     </div>
   </div>
+  
+  {% endfor %}
 </div>
 {% endblock %}

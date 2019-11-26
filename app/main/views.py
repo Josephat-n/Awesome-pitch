@@ -21,4 +21,6 @@ def pitch(id):
    Allow for more viewing of a given pitch.
    """
    #Should return a pitch by id   
-   return render_template('pitch.html', id = id)
+   a_pitch = Pitch.query.filter_by(id= id)
+   print(a_pitch)
+   return render_template('pitch.html', id = id, a_pitch = a_pitch)
