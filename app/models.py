@@ -53,6 +53,5 @@ class Pitch(db.Model):
    
    
    def __repr__(self):
+
       return f'Pitch {self.pitch_msg}'
-   
-   
