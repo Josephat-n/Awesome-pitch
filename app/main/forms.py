@@ -3,7 +3,7 @@ from wtforms import StringField,TextAreaField,SubmitField
 from wtforms.validators import Required
 
 class CommentForm(FlaskForm):
-  # title = StringField('Review title',validators=[Required()])
-  review = TextAreaField('Your Comment')
+  # title = StringField('Review title',)
+  comment = TextAreaField('Your Comment',validators=[Required()])
   submit = SubmitField('Submit')
  

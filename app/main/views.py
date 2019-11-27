@@ -1,8 +1,8 @@
-from flask import render_template
+from flask import render_template, redirect, url_for
 from . import main
 from flask_login import login_required, current_user
 from .. import db
-from ..models import Pitch
+from ..models import Pitch, Comment
 from .forms import CommentForm
 
 #This defines the various views in our app
@@ -33,4 +33,15 @@ def comment(id):
    Write a comment on any pitch
    """
    form = CommentForm()
-   return render_template('comment.html',id = id, comment_form=form)
+   a_pitch = Pitch.query.filter_by(id= id)
+   print(a_pitch)
+   
+   if form.validate_on_submit():
+      comment = Comment( comment_msg = form.comment.data)
+      db.session.add(comment)
+      db.session.commit()      
+      
+      #method to save a comment
+      return redirect(url_for('main.pitch', id = id))
+   
+   return render_template('comment.html', comment_form=form)
