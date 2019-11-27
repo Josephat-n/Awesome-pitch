@@ -4,12 +4,8 @@ from app.models import User, Role, Pitch
 from  flask_migrate import Migrate, MigrateCommand
 
 # Creating app instance
-<<<<<<< HEAD
-app = create_app('production')
-=======
-app = create_app('development')
->>>>>>> 5e8386819438b482f418774b64bbd2b55e253006
 
+app = create_app('production')
 manager = Manager(app)
 manager.add_command('server',Server)
 migrate = Migrate(app,db)
@@ -21,14 +17,9 @@ def test():
 
 @manager.shell
 def make_shell_context():
-<<<<<<< HEAD
+   
    return dict(app = app,db = db,User = User, Role = Role, Pitch = Pitch)
 
 if __name__=='__main__':
    manager.run()
-=======
-    return dict(app = app,db = db,User = User, Role = Role, Pitch = Pitch)
 
-if __name__=='__main__':
-    manager.run()
->>>>>>> 5e8386819438b482f418774b64bbd2b55e253006

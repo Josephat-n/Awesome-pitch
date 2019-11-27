@@ -2,19 +2,13 @@ from flask import Flask
 from flask_bootstrap import Bootstrap
 from config import config_options
 from flask_sqlalchemy import SQLAlchemy
-<<<<<<< HEAD
 from flask_mail import Mail
-=======
->>>>>>> 5e8386819438b482f418774b64bbd2b55e253006
 from flask_login import LoginManager
 
 bootstrap = Bootstrap()
 db = SQLAlchemy()
-<<<<<<< HEAD
 mail = Mail()
-=======
 
->>>>>>> 5e8386819438b482f418774b64bbd2b55e253006
 #login Extensions
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'
@@ -37,9 +31,6 @@ def create_app(config_name):
    app.register_blueprint(main_blueprint)
    from .auth import auth as auth_blueprint
    app.register_blueprint(auth_blueprint,url_prefix = '/authenticate')
-   
-<<<<<<< HEAD
+
    return app
-=======
-   return app
->>>>>>> 5e8386819438b482f418774b64bbd2b55e253006
+
