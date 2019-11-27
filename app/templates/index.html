@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<h3 style="margin-left: 40px; color:orangered">Pitch Category One</h3>
+<div class="container">
+   {% for x in pitches %}
+   <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+         <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{x.pitch_msg}}</li>
+            <a href="/pitch/{{x.id}}"><button class="btn btn-info">View Pitch</button></a>
+            <hr>
+         </ul>   
+      </div>
+   </div>
+   {% endfor %}
+</div>
+{% endblock %}
