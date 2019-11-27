@@ -1,6 +1,7 @@
 import os
 
 class Config:
+<<<<<<< HEAD
    SECRET_KEY=os.environ.get('SECRET_KEY')
    
    #Email configurations
@@ -20,6 +21,16 @@ class ProdConfig(Config):
 class DevConfig(Config):
    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://njoro:njoro@localhost/awesome'
    DEBUG=True
+=======
+   SECRET_KEY = os.environ.get('SECRET_KEY')	 
+
+class ProdConfig(Config):
+   pass
+
+class DevConfig(Config):
+   SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://njoro:njoro@localhost/awesome'
+   DEBUG = True
+>>>>>>> 5e8386819438b482f418774b64bbd2b55e253006
 
 config_options = {
 'development':DevConfig,
