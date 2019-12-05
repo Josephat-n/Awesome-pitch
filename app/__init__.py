@@ -8,6 +8,7 @@ from flask_login import LoginManager
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 mail = Mail()
+
 #login Extensions
 login_manager = LoginManager()
 login_manager.session_protection = 'strong'

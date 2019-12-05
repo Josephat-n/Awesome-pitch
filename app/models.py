@@ -46,10 +46,10 @@ class Role(db.Model):
       return f'User {self.name}'     
      
 class Pitch(db.Model):
-   __tablename____ = 'pitches'
+   __tablename__ = 'pitches'
    
    id = db.Column(db.Integer,primary_key = True)    
-   pitch_msg =  db.Column(db.String(255))
+   pitch_msg =  db.Column(db.String(2000))
    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
    
    
@@ -58,10 +58,10 @@ class Pitch(db.Model):
       return f'Pitch {self.pitch_msg}'
 
 class Comment(db.Model):
-   __tablename____ = 'comments'
+   __tablename__ = 'comments'
    
    id = db.Column(db.Integer,primary_key = True)    
-   comment_msg =  db.Column(db.String(255))
+   comment_msg =  db.Column(db.String(2000))
    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
    
    

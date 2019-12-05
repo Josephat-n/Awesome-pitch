@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, abort
 from . import main
 from flask_login import login_required, current_user
 from .. import db
@@ -24,6 +24,7 @@ def pitch(id):
    #Should return a pitch by id   
    a_pitch = Pitch.query.filter_by(id= id)
    print(a_pitch)
+   
    return render_template('pitch.html', id = id, a_pitch = a_pitch)
 
 @main.route('/pitch/comment/<int:id>', methods = ['GET','POST'])
